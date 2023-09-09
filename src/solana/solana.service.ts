@@ -27,7 +27,7 @@ export class SolanaService {
             ])
         );
 
-        console.log("Public Key:", this.wallet.publicKey.toBase58());
+        // console.log("Public Key:", this.wallet.publicKey.toBase58());
 
         this.metaplex = Metaplex.make(connection)
         .use(keypairIdentity(this.wallet))
