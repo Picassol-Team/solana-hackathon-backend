@@ -16,6 +16,8 @@ export class User {
   address: string;
   @Prop({ required: true, default: RoleEnum.Developer })
   role: RoleEnum;
+  @Prop()
+  nfts: string[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
