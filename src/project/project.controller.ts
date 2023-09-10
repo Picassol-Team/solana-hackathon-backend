@@ -22,9 +22,9 @@ export class ProjectController {
     return this.projectService.findOne(id);
   }
 
-  @Get('getByOwnerAddress/:id')
-  getByOwnerAddress(@Param('id') id: string) {
-    return this.projectService.getByOwnerAddress(id);
+  @Get('getByOwnerAddress/:projectOwnerAddress')
+  getByOwnerAddress(@Param('projectOwnerAddress') projectOwnerAddress: string) {
+    return this.projectService.getByOwnerAddress(projectOwnerAddress);
   }
 
   @Patch(':id')

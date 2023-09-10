@@ -25,7 +25,7 @@ export class TaskService {
   }
 
   async getByProjectId(projectId: string) {
-    return await this.taskModel.findOne({ projectId: projectId }).lean();
+    return await this.taskModel.find({ projectId: projectId }).lean();
   }
 
   async update(id: string, updateTaskDto: UpdateTaskDto) {

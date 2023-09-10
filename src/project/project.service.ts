@@ -24,7 +24,7 @@ export class ProjectService {
   }
 
   async getByOwnerAddress(projectOwnerAddress: string) {
-    return await this.projectModel.findOne({ projectOwnerAddress: projectOwnerAddress }).lean();
+    return await this.projectModel.find({ projectOwnerAddress: projectOwnerAddress }).lean();
   }
 
   async update(id: string, updateProjectDto: UpdateProjectDto) {
