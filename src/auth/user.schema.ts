@@ -10,7 +10,9 @@ export enum RoleEnum {
   Tester = 'Tester',
 }
 
-@Schema()
+@Schema({
+  timestamps:true
+})
 export class User {
   @Prop({ required: true })
   address: string;

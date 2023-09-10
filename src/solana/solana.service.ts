@@ -102,4 +102,16 @@ export class SolanaService {
 
         return nft;
     }
+
+    async transferNFT(nftAddress:string, toAddress:string){
+        const destination = new PublicKey(toAddress);
+        const transferTransactionBuilder = await this.metaplex.nfts().builders().transfer({
+            nftOrSft: {address: nftAddress, tokenStandard: TokenStandard.ProgrammableNonFungible},
+            authority: this.wallet,
+            fromOwner: this.wallet.publicKey,
+            toOwner: destination,
+        });
+
+        return transferTransactionBuilder;
+    }
 }

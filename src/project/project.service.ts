@@ -23,6 +23,10 @@ export class ProjectService {
     return await this.projectModel.findOne({ _id: id }).lean();
   }
 
+  async getByOwnerAddress(projectOwnerAddress: string) {
+    return await this.projectModel.findOne({ projectOwnerAddress: projectOwnerAddress }).lean();
+  }
+
   async update(id: string, updateProjectDto: UpdateProjectDto) {
     return await this.projectModel.updateOne({ _id: id }, updateProjectDto);
   }
