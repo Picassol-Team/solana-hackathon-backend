@@ -37,7 +37,7 @@ export class AuthService {
     const nftAddress = await this.solanaService.createNFT(metadata,createNftDto);
     createUserDto.nfts=[nftAddress];
 
-    await this.solanaService.transferNFT(nftAddress, createUserDto.address);
+    // await this.solanaService.transferNFT(nftAddress, createUserDto.address);
     
     return await this.userModel.create(createUserDto);
   }
